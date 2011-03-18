@@ -2,8 +2,8 @@ module Mootools
   module Generators
     class InstallGenerator < ::Rails::Generators::Base
       desc "This generator downloads and installs MooTools and MooTools-ujs HEAD"
-      class_option :version, :type => :string, :default => "1.2.5", :desc => "Which version of MooTools to fetch"
-      @@default_version = "1.2.5"
+      class_option :version, :type => :string, :default => "1.3.1", :desc => "Which version of MooTools to fetch"
+      @@default_version = "1.3.1"
 
       def remove_prototype
         %w(controls.js dragdrop.js effects.js prototype.js).each do |js|
@@ -22,7 +22,7 @@ module Mootools
 
       def download_ujs_driver
         say_status("fetching", "MooTools UJS adapter (github HEAD)", :green)
-        get "https://github.com/neonlex/mootools-ujs/raw/master/Source/rails.js", "public/javascripts/rails.js"
+        get "https://github.com/kevinvaldek/mootools-ujs/raw/master/Source/rails.js", "public/javascripts/rails.js"
       end
 
     private
